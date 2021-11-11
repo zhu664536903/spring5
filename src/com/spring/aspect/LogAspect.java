@@ -26,11 +26,16 @@ public class LogAspect {
     public void before(){
         System.out.println("前置通知");
     }
+    @After("cut()")
     public void after(){
-        System.out.println("后置通知");
+        System.out.println("After后置通知");
     }
     @AfterThrowing("cut()")
     public void throwAble(){
-        System.out.println("异常返回通知");
+        System.out.println("AfterThrowing异常返回通知");
+    }
+    @AfterReturning("cut()")
+    public void afterReturning(){
+        System.out.println("afterReturning返回通知");
     }
 }
